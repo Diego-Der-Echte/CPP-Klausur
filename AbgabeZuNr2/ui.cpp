@@ -6,14 +6,20 @@ ui::ui()
 {
 
 }
+void ui::mainLoop() {
+
+
+    Eingabe ();
+    eingabeZahlen();
+    Ausgabe ();
+}
 
 
 
-int ui::Eingabe(){
+
+void ui::Eingabe(){
 
     int rechenzeichen = 0;
-    int zahl1 = 0;
-    int zahl2 = 0;
 
     cout << "Was möchten Sie berechnen?" << endl;
         cout << "1 = Addieren" << endl;
@@ -24,71 +30,42 @@ int ui::Eingabe(){
         cout << "6 = Wurzelziehen" << endl;
         cout << "7 = Binaer And" << endl;
         cout << "8 = Binaer Or" << endl;
+        cout << "9 = Binaer NAND" << endl;
 
         cin >> rechenzeichen;
-        if (rechenzeichen >8) {
+        myRechner.setRechenzeichen(rechenzeichen);
+        if (rechenzeichen >9) {
             cout << "Fehler Falsche Angabe!" << endl;
-            return 0;
+            return;
+        }
+}
+
+
+
+
+void ui::eingabeZahlen() {
+        int zahl1 = 0;
+        int zahl2 = 0;
+
+        cout << "Zahl 1" << endl;
+        cin >> zahl1;
+        myRechner.setZahl1(zahl1);
+
+        cout << "Zahl 2" << endl;
+        cin >> zahl2;
+        myRechner.setZahl2(zahl2);
+
+        if (myRechner.getRechenzeichen() == 4 && zahl2 == 0){
+            cout << "Fehler nicht Möglich" << endl;
+                return ;
         }
 
-        switch (rechenzeichen) {
-        case 1:
-            cout << "Multiplizieren" << endl;
-            cout << "Eingabe Zahl 1 und Zahl 2" << endl;
-            cin >> zahl1;
-            cin >> zahl2;
-            break;
+        myRechner.macheRechnung();
+}
 
-        case 2:
-            cout << "Subtrahieren" << endl;
-            cout << "Eingabe Zahl 1 und Zahl 2" << endl;
-            cin >> zahl1;
-            cin >> zahl2;
-            break;
 
-        case 3:
-            cout << "Multiplizieren" << endl;
-            cout << "Eingabe Zahl 1 und Zahl 2" << endl;
-            cin >> zahl1;
-            cin >> zahl2;
-            break;
+int ui::Ausgabe(){
+        cout <<  myRechner.getSumme() << endl;
 
-        case 4:
-            cout << "Dividieren" << endl;
-            cout << "Eingabe Zahl 1 und Zahl 2" << endl;
-            cin >> zahl1;
-            cin >> zahl2;
-
-            if (0 == zahl2) {
-                cout << "Fehler nicht Möglich" << endl;
-                    return 0;
-            }
-            break;
-
-        case 5:
-            cout << "Potenz" << endl;
-            cout << "Eingabe Zahl 1 und Zahl 2 (Potenz)" << endl;
-            cin >> zahl1;
-            cin >> zahl2;
-            break;
-
-        case 6:
-            cout << "Wurzelziehen" << endl;
-            cout << "Eingabe Zahl 1" << endl;
-            cin >> zahl1;
-            break;
-
-        case 7:
-            cout << "Binaer And" << endl;
-            cout << "Eingabe Zahl 1" << endl;
-            cin >> zahl1;
-            break;
-
-        case 8:
-            cout << "Binaer Or" << endl;
-            cout << "Eingabe Zahl 1" << endl;
-            cin >> zahl1;
-            break;
-        }
-        return zahl1 / zahl2;
+        return summe;
 }
