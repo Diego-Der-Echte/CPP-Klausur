@@ -7,7 +7,7 @@ class ui
 {
 public:
     ui();
-    void mainLoop();
+    int mainLoop();
 
 private:
     rechner myRechner;
