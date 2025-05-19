@@ -1,4 +1,6 @@
-#include "Data.h"
+#include "data.h"
+
+
 
 Data::Data()
 {
@@ -32,32 +34,6 @@ int Data::getSumme (){
     return summe;
 }
 
-
-
-
-
-bool Data::fileOpen(){
-    daten.open("output.txt");
-    if (!daten.is_open()){
-        cout << "Fehler" << endl;
-        return false;
-    }
-    return true;
-}
-
-void Data::fileWriten(string newDatei){
-    daten << newDatei;
-}
-
-void Data::fileClose(){
-    daten.close();
-}
-
-void Data::fileAdd(string ergebnis){
-    if (!fileOpen()){
-        cout << "Fehler" << endl;
-        return;
-    }
-    fileWriten(ergebnis);
-    fileClose();
+void fileOpen() {
+    ofstream fileOpen("output.txt", std::ios::app);
 }

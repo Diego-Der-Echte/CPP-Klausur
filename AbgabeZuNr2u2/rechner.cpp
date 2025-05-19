@@ -1,14 +1,10 @@
 #include "rechner.h"
 
 
-using namespace std;
-
 
 rechner::rechner()
 {
-    //mydata = new Data;
 }
-
 
 void rechner::macheRechnung(){
     if (rechenzeichen == 1){
@@ -46,7 +42,5 @@ void rechner::macheRechnung(){
     if (rechenzeichen == 9){
         summe = ! (zahl1 & zahl2);
     }
-    string tempString = "Ergebnis = ";
-    tempString += to_string(summe);
-   // mydata->fileWriten(tempString);
+
 }

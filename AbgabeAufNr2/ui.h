@@ -1,10 +1,7 @@
 #ifndef UI_H
 #define UI_H
 
-#include <iostream>
 #include "rechner.h"
-
-using namespace std;
 
 class ui
 {

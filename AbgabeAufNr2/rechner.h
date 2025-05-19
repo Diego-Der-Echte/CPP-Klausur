@@ -1,9 +1,6 @@
 #ifndef RECHNER_H
 #define RECHNER_H
 
-//#include "data.h"
-#include <iostream>
-#include <cmath>
 
 class rechner
 {
@@ -28,8 +25,6 @@ private:
     int zahl2;
     int rechenzeichen;
     double summe;
-
-   // Data* mydata;
 };
 
 #endif // RECHNER_H

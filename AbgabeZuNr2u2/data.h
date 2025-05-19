@@ -1,14 +1,19 @@
-#ifndef RECHNER_H
-#define RECHNER_H
+#ifndef DATA_H
+#define DATA_H
 
-//#include "data.h"
 #include <iostream>
-#include <cmath>
+#include <fstream>
 
-class rechner
+ /*#include <QString>
+#include <QStringList>*/
+
+using namespace std;
+
+class Data
 {
 public:
-    rechner();
+    Data();
+
     void setZahl1 (int newZahl1);
     int getZahl1 ();
 
@@ -20,16 +25,15 @@ public:
 
     void setSumme (int newSumme);
     int getSumme ();
+    void fileOpen();
+    void fileClose();
 
-    void macheRechnung();
 
 private:
     int zahl1;
     int zahl2;
     int rechenzeichen;
     double summe;
-
-   // Data* mydata;
 };
 
-#endif // RECHNER_H
+#endif // DATA_H

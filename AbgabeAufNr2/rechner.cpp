@@ -1,14 +1,40 @@
 #include "rechner.h"
-
+#include <iostream>
+#include <cmath>
 
 using namespace std;
 
 
 rechner::rechner()
 {
-    //mydata = new Data;
 }
 
+void rechner::setZahl1 (int newZahl1){
+    zahl1 = newZahl1;
+}
+int rechner::getZahl1 (){
+    return zahl1;
+}
+
+void rechner::setZahl2 (int newZahl2){
+    zahl2 = newZahl2;
+}
+int rechner::getZahl2 (){
+    return zahl2;
+}
+
+void rechner::setRechenzeichen (int newRechenzeichen){
+    rechenzeichen = newRechenzeichen;
+}
+int rechner::getRechenzeichen(){
+    return rechenzeichen;
+}
+void rechner::setSumme (int newSumme){
+    summe = newSumme;
+}
+int rechner::getSumme (){
+    return summe;
+}
 
 void rechner::macheRechnung(){
     if (rechenzeichen == 1){
@@ -46,7 +72,5 @@ void rechner::macheRechnung(){
     if (rechenzeichen == 9){
         summe = ! (zahl1 & zahl2);
     }
-    string tempString = "Ergebnis = ";
-    tempString += to_string(summe);
-   // mydata->fileWriten(tempString);
+
 }

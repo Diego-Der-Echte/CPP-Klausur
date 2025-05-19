@@ -1,5 +1,8 @@
 #include "ui.h"
-
+#include <data.h>
+#include <rechner.h>
+#include <iostream>
+using namespace std;
 
 ui::ui()
 {
